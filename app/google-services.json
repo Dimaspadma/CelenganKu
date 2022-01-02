@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "222034268494",
+    "project_id": "celenganku-udinus",
+    "storage_bucket": "celenganku-udinus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222034268494:android:4a40e0ea28cfaa2c590e1f",
+        "android_client_info": {
+          "package_name": "com.udinus.celenganku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222034268494-v6niv0kcc23jdp8gf61pss1mfubfr65d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvL8Oo9aXxjERJh_kG0GZYGFNt2ouWIuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222034268494-v6niv0kcc23jdp8gf61pss1mfubfr65d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
