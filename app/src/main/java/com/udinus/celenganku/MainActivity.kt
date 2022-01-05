@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         Log.d(TAG, "started")
 //        startActivity(Intent(this, LoginActivity::class.java))
+
     }
 
     override fun onStop() {

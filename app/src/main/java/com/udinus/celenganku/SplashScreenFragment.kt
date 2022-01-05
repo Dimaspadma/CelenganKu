@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.udinus.celenganku.databinding.FragmentSplashScreenBinding
 
 class SplashScreenFragment : Fragment() {
@@ -19,6 +20,14 @@ class SplashScreenFragment : Fragment() {
     ): View? {
         _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
         return _binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view.setOnClickListener {
+            val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToHomeFragment()
+            view.findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {
