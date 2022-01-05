@@ -24,10 +24,9 @@ class SplashScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.setOnClickListener {
-            val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToHomeFragment()
-            view.findNavController().navigate(action)
-        }
+
+        val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToLoginFragment()
+        view.findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

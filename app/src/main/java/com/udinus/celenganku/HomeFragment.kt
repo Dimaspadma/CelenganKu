@@ -27,10 +27,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToSplashScreenFragment()
-            view.findNavController().navigate(action)
-        }
     }
 
     override fun onDestroyView() {
