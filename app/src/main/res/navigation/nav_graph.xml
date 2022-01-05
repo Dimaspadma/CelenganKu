@@ -22,6 +22,12 @@
         <argument
             android:name="username"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_pemasukanFragment"
+            app:destination="@id/pemasukanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pengeluaranFragment"
+            app:destination="@id/pengeluaranFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -44,4 +50,14 @@
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/pemasukanFragment"
+        android:name="com.udinus.celenganku.PemasukanFragment"
+        android:label="fragment_pemasukan"
+        tools:layout="@layout/fragment_pemasukan" />
+    <fragment
+        android:id="@+id/pengeluaranFragment"
+        android:name="com.udinus.celenganku.PengeluaranFragment"
+        android:label="fragment_pengeluaran"
+        tools:layout="@layout/fragment_pengeluaran" />
 </navigation>
