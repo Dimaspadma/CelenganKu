@@ -10,10 +10,20 @@ import com.udinus.celenganku.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
+    companion object {
+        const val USERNAME = "username"
+    }
+
     private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    private var username: String = "User"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {
+            username = it.getString(USERNAME).toString()
+        }
     }
 
     override fun onCreateView(
@@ -27,6 +37,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.textUsername.text = username
     }
 
     override fun onDestroyView() {

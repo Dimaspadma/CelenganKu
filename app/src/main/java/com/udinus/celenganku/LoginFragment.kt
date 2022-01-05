@@ -12,14 +12,12 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.udinus.celenganku.databinding.FragmentLoginBinding
 import com.udinus.celenganku.model.Account
-import com.udinus.celenganku.utils.Hash
 import com.udinus.celenganku.utils.Hash.sha256
 
 class LoginFragment : Fragment() {
 
-    companion object {
-        const val TAG = "LoginFragment"
-    }
+
+    private val TAG = "LoginFragment"
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
@@ -43,10 +41,15 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setAccount()
 
         binding.buttonLogin.setOnClickListener {
+            setAccount()
             login(account)
+        }
+        
+        binding.textRegistrasi.setOnClickListener { 
+            val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            findNavController().navigate(action)
         }
     }
 
@@ -69,17 +72,20 @@ class LoginFragment : Fragment() {
 
         database.collection("accounts")
             .whereEqualTo("username", account.username)
-            .whereEqualTo("password", Hash.sha256(account.password))
+            .whereEqualTo("password", sha256(account.password))
             .get()
             .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                    val username: String = document["username"].toString()
 
-                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                var username: String? = null
+
+                for (document in documents) {
+                    username = document["username"].toString()
+
+                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(username = username)
                     findNavController().navigate(action)
                 }
-                Snackbar.make(this.requireView(), "User tidak ditemukan", Snackbar.LENGTH_SHORT).show()
+                if (username == null) Snackbar.make(this.requireView(), "User not found", Snackbar.LENGTH_SHORT).show()
+
             }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents: ", exception)
