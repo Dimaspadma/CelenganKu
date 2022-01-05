@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_homeFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -88,5 +91,19 @@
         android:id="@+id/historyFragment"
         android:name="com.udinus.celenganku.adapter.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_detailHistoryFragment"
+            app:destination="@id/detailHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHistoryFragment"
+        android:name="com.udinus.celenganku.DetailHistoryFragment"
+        android:label="fragment_detail_history"
+        tools:layout="@layout/fragment_detail_history" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.udinus.celenganku.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
