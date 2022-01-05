@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_lupaPasswordFragment"
+            app:destination="@id/lupaPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -60,4 +63,18 @@
         android:name="com.udinus.celenganku.PengeluaranFragment"
         android:label="fragment_pengeluaran"
         tools:layout="@layout/fragment_pengeluaran" />
+    <fragment
+        android:id="@+id/lupaPasswordFragment"
+        android:name="com.udinus.celenganku.LupaPasswordFragment"
+        android:label="fragment_lupa_password"
+        tools:layout="@layout/fragment_lupa_password" >
+        <action
+            android:id="@+id/action_lupaPasswordFragment_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.udinus.celenganku.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" />
 </navigation>
