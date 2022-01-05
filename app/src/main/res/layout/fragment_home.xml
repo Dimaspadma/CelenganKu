@@ -11,15 +11,54 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/text_username"
+            android:id="@+id/welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home Screen"
+            android:text="Welcome, "
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/welcome"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="dimaspadma" />
+
+
+        <TextView
+            android:id="@+id/cash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CASH"
+            android:textSize="28sp"
+            app:chainUseRtl="false"
+            app:layout_constraintBottom_toTopOf="@+id/cash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/cash_title"
+            tools:text="100.000" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
