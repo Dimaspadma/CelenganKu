@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.udinus.celenganku.SplashScreenFragment"
+        android:name="com.udinus.celenganku.ui.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.udinus.celenganku.HomeFragment"
+        android:name="com.udinus.celenganku.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <argument
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.udinus.celenganku.LoginFragment"
+        android:name="com.udinus.celenganku.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.udinus.celenganku.RegisterFragment"
+        android:name="com.udinus.celenganku.ui.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -61,17 +61,17 @@
     </fragment>
     <fragment
         android:id="@+id/pemasukanFragment"
-        android:name="com.udinus.celenganku.PemasukanFragment"
+        android:name="com.udinus.celenganku.ui.PemasukanFragment"
         android:label="fragment_pemasukan"
         tools:layout="@layout/fragment_pemasukan" />
     <fragment
         android:id="@+id/pengeluaranFragment"
-        android:name="com.udinus.celenganku.PengeluaranFragment"
+        android:name="com.udinus.celenganku.ui.PengeluaranFragment"
         android:label="fragment_pengeluaran"
         tools:layout="@layout/fragment_pengeluaran" />
     <fragment
         android:id="@+id/lupaPasswordFragment"
-        android:name="com.udinus.celenganku.LupaPasswordFragment"
+        android:name="com.udinus.celenganku.ui.LupaPasswordFragment"
         android:label="fragment_lupa_password"
         tools:layout="@layout/fragment_lupa_password" >
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.udinus.celenganku.NewPasswordFragment"
+        android:name="com.udinus.celenganku.ui.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action
@@ -98,12 +98,12 @@
     </fragment>
     <fragment
         android:id="@+id/detailHistoryFragment"
-        android:name="com.udinus.celenganku.DetailHistoryFragment"
+        android:name="com.udinus.celenganku.ui.DetailHistoryFragment"
         android:label="fragment_detail_history"
         tools:layout="@layout/fragment_detail_history" />
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.udinus.celenganku.MapsFragment"
+        android:name="com.udinus.celenganku.ui.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
 </navigation>

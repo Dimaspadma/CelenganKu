@@ -1,11 +1,10 @@
-package com.udinus.celenganku
+package com.udinus.celenganku.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import com.udinus.celenganku.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

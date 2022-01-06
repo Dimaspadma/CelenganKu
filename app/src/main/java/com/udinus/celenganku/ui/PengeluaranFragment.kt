@@ -1,15 +1,13 @@
-package com.udinus.celenganku
+package com.udinus.celenganku.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.udinus.celenganku.R
 
-class DetailHistoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class PengeluaranFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +19,7 @@ class DetailHistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail_history, container, false)
+        return inflater.inflate(R.layout.fragment_pengeluaran, container, false)
     }
 
 }
