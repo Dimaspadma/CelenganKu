@@ -62,6 +62,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
+        <TextView
+            android:id="@+id/text_lupa_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="lupa password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_registrasi" />
+
         <Button
             android:id="@+id/button_login"
             android:layout_width="wrap_content"
@@ -70,7 +79,7 @@
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_registrasi" />
+            app:layout_constraintTop_toBottomOf="@+id/text_lupa_password" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

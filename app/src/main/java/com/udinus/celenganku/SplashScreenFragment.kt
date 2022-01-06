@@ -1,6 +1,7 @@
 package com.udinus.celenganku
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import androidx.navigation.findNavController
 import com.udinus.celenganku.databinding.FragmentSplashScreenBinding
 
 class SplashScreenFragment : Fragment() {
+
+    private val TAG = "SplashScreenFragment"
 
     private var _binding: FragmentSplashScreenBinding? = null
     private val binding get() = _binding!!
@@ -29,8 +32,14 @@ class SplashScreenFragment : Fragment() {
         view.findNavController().navigate(action)
     }
 
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop is called")
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
+        Log.d(TAG, "onDestroyView is called")
         _binding = null
     }
 }

@@ -51,10 +51,16 @@ class LoginFragment : Fragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             findNavController().navigate(action)
         }
+
+        binding.textLupaPassword.setOnClickListener {
+            val action = LoginFragmentDirections.actionLoginFragmentToLupaPasswordFragment()
+            findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        Log.d(TAG, "OnDestroy is called")
         _binding = null
     }
 
@@ -81,7 +87,7 @@ class LoginFragment : Fragment() {
                 for (document in documents) {
                     username = document["username"].toString()
 
-                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(username = username)
+                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(username=username)
                     findNavController().navigate(action)
                 }
                 if (username == null) Snackbar.make(this.requireView(), "User not found", Snackbar.LENGTH_SHORT).show()
