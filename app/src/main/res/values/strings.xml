@@ -2,4 +2,18 @@
     <string name="app_name">CelenganKu</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Anggota-->
+    <string name="universitas">Dian Nuswantoro</string>
+
+    <string name="anggota1">Maskumambang Padmanegara</string>
+    <string name="nim1">A11.2020.12496</string>
+
+    <string name="anggota2">Zarek Gema Galgani</string>
+    <string name="nim2">A11.2019.11724</string>
+
+    <string name="anggota3">Denni Ariono</string>
+    <string name="nim3">A11.2020.13204</string>
+    <string name="hp3">085293490296</string>
+    <string name="email3">denievz123@gmail.com</string>
 </resources>
