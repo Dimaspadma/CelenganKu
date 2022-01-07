@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.udinus.celenganku.ui.LoginFragment"
+        android:name="com.udinus.celenganku.ui.form.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.udinus.celenganku.ui.RegisterFragment"
+        android:name="com.udinus.celenganku.ui.form.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -71,7 +71,7 @@
         tools:layout="@layout/fragment_pengeluaran" />
     <fragment
         android:id="@+id/lupaPasswordFragment"
-        android:name="com.udinus.celenganku.ui.LupaPasswordFragment"
+        android:name="com.udinus.celenganku.ui.form.LupaPasswordFragment"
         android:label="fragment_lupa_password"
         tools:layout="@layout/fragment_lupa_password" >
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.udinus.celenganku.ui.NewPasswordFragment"
+        android:name="com.udinus.celenganku.ui.form.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action

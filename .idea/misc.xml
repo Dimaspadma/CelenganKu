@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/drawable-hdpi/foto_profil1_background.xml" value="0.3046153846153846" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/drawable/button_bg.xml" value="0.309375" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/drawable/foto_profil1_background.xml" value="1.109375" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_detail_history.xml" value="0.264" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_history.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_home.xml" value="0.14375" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_main.xml" value="0.12664640324214793" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_register.xml" value="0.14375" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_about.xml" value="0.146875" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_blank.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit.xml" value="0.264" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit_padma.xml" value="0.2791666666666667" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit_zarek.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_denni_credit.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_detail_history.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_history.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_home.xml" value="0.2791666666666667" />
