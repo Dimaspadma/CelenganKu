@@ -1,4 +1,4 @@
-package com.udinus.celenganku.ui.about
+package com.udinus.celenganku.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.udinus.celenganku.R
 
-class AboutFragment : Fragment() {
+class PengeluaranFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false)
+        return inflater.inflate(R.layout.fragment_pengeluaran, container, false)
     }
 
 }

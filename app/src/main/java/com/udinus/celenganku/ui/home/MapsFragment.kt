@@ -1,4 +1,4 @@
-package com.udinus.celenganku.ui
+package com.udinus.celenganku.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

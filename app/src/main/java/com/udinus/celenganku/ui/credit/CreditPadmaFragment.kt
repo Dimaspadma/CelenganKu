@@ -1,4 +1,4 @@
-package com.udinus.celenganku.ui
+package com.udinus.celenganku.ui.credit
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.udinus.celenganku.R
 
-class PemasukanFragment : Fragment() {
+
+class CreditPadmaFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,7 @@ class PemasukanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pemasukan, container, false)
+        return inflater.inflate(R.layout.fragment_credit_padma, container, false)
     }
 
 }

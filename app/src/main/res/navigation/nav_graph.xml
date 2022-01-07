@@ -3,22 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.udinus.celenganku.ui.SplashScreenFragment"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
-        <action
-            android:id="@+id/action_splashScreenFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/homeFragment"
-        android:name="com.udinus.celenganku.ui.HomeFragment"
+        android:name="com.udinus.celenganku.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <argument
             android:name="username"
             app:argType="string" />
@@ -34,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -61,12 +55,12 @@
     </fragment>
     <fragment
         android:id="@+id/pemasukanFragment"
-        android:name="com.udinus.celenganku.ui.PemasukanFragment"
+        android:name="com.udinus.celenganku.ui.home.PemasukanFragment"
         android:label="fragment_pemasukan"
         tools:layout="@layout/fragment_pemasukan" />
     <fragment
         android:id="@+id/pengeluaranFragment"
-        android:name="com.udinus.celenganku.ui.PengeluaranFragment"
+        android:name="com.udinus.celenganku.ui.home.PengeluaranFragment"
         android:label="fragment_pengeluaran"
         tools:layout="@layout/fragment_pengeluaran" />
     <fragment
@@ -98,12 +92,71 @@
     </fragment>
     <fragment
         android:id="@+id/detailHistoryFragment"
-        android:name="com.udinus.celenganku.ui.DetailHistoryFragment"
+        android:name="com.udinus.celenganku.ui.home.DetailHistoryFragment"
         android:label="fragment_detail_history"
         tools:layout="@layout/fragment_detail_history" />
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.udinus.celenganku.ui.MapsFragment"
+        android:name="com.udinus.celenganku.ui.home.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/creditFragment"
+        android:name="com.udinus.celenganku.ui.credit.CreditFragment"
+        android:label="fragment_credit"
+        tools:layout="@layout/fragment_credit">
+        <action
+            android:id="@+id/action_creditFragment_to_creditPadmaFragment"
+            app:destination="@id/creditPadmaFragment" />
+        <action
+            android:id="@+id/action_creditFragment_to_creditZarekFragment"
+            app:destination="@id/creditZarekFragment" />
+        <action
+            android:id="@+id/action_creditFragment_to_creditDenniFragment"
+            app:destination="@id/creditDenniFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditDenniFragment"
+        android:name="com.udinus.celenganku.ui.credit.CreditDenniFragment"
+        android:label="fragment_credit_denni"
+        tools:layout="@layout/fragment_credit_denni" />
+    <fragment
+        android:id="@+id/creditPadmaFragment"
+        android:name="com.udinus.celenganku.ui.credit.CreditPadmaFragment"
+        android:label="fragment_credit_padma"
+        tools:layout="@layout/fragment_credit_padma" />
+    <fragment
+        android:id="@+id/creditZarekFragment"
+        android:name="com.udinus.celenganku.ui.credit.CreditZarekFragment"
+        android:label="fragment_credit_zarek"
+        tools:layout="@layout/fragment_credit_zarek" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.udinus.celenganku.ui.credit.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.udinus.celenganku.ui.home.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_creditFragment"
+            app:destination="@id/creditFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_pengeluaranFragment"
+            app:destination="@id/pengeluaranFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_pemasukanFragment"
+            app:destination="@id/pemasukanFragment" />
+    </fragment>
 </navigation>

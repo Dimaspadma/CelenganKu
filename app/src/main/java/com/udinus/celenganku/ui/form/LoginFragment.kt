@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
@@ -49,12 +50,12 @@ class LoginFragment : Fragment() {
         
         binding.textRegistrasi.setOnClickListener { 
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
-            findNavController().navigate(action)
+            view.findNavController().navigate(action)
         }
 
         binding.textLupaPassword.setOnClickListener {
             val action = LoginFragmentDirections.actionLoginFragmentToLupaPasswordFragment()
-            findNavController().navigate(action)
+            view.findNavController().navigate(action)
         }
     }
 
