@@ -1,12 +1,10 @@
 package com.udinus.celenganku.adapter
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.udinus.celenganku.DetailHistoryActivity
 import com.udinus.celenganku.databinding.ListItemBinding
 import com.udinus.celenganku.model.Item
 
@@ -28,9 +26,9 @@ class HistoryAdapter(
 //                Snackbar.make(view, "${item.title} is clicked", Snackbar.LENGTH_SHORT).show()
                 Log.d("CLICK", "${item.title} have been clicked")
 
-                val intent = Intent(view.context, DetailHistoryActivity::class.java)
-                intent.putExtra(DetailHistoryActivity.TITLE, item.title)
-                view.context.startActivity(intent)
+//                val intent = Intent(view.context, DetailHistoryActivity::class.java)
+//                intent.putExtra(DetailHistoryActivity.TITLE, item.title)
+//                view.context.startActivity(intent)
             }
 
 //            textView.text = item.title

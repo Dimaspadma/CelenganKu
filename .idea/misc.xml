@@ -9,15 +9,20 @@
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/drawable/foto_profil1_background.xml" value="1.109375" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/drawable/ic_logo.xml" value="0.290625" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_detail_history.xml" value="0.264" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_form.xml" value="0.12817028985507245" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_history.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_home.xml" value="0.14375" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_main.xml" value="0.12664640324214793" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_main2.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_register.xml" value="0.14375" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/activity_splash.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/content_form.xml" value="0.14427083333333332" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_about.xml" value="0.146875" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_blank.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit.xml" value="0.264" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit_denni.xml" value="0.264" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit_padma.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_credit_zarek.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_denni_credit.xml" value="0.29322916666666665" />
@@ -31,8 +36,11 @@
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_pemasukan.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_pengeluaran.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_register.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_second.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/fragment_splash_screen.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/layout/history_list_item.xml" value="0.264" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/dimas/AndroidStudioProjects/CelenganKu/app/src/main/res/menu/nav_menu.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

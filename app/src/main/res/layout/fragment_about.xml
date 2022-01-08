@@ -41,25 +41,13 @@
             android:layout_height="300dp"
             android:layout_marginTop="16dp"
             android:fontFamily="casual"
-            android:text="Celenganku merupakan sebuah aplikasi yang membantu Anda dalam mengatur keuangan Anda. Aplikasi ini membantu Anda untuk mencatat semua pemasukan dan pengeluaran harian Anda. Aplikasi ini juga akan menyimpan semua riwayat atau history yang telah Anda catat."
+            android:text="@string/description_about"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo_about" />
-
-        <Button
-            android:id="@+id/back_about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/back_button"
-            android:backgroundTint="@color/white"
-            android:text="Back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/about_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

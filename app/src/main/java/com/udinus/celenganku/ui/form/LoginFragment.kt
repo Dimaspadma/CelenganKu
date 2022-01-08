@@ -1,5 +1,6 @@
 package com.udinus.celenganku.ui.form
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.udinus.celenganku.MainActivity
 import com.udinus.celenganku.databinding.FragmentLoginBinding
 import com.udinus.celenganku.model.Account
 import com.udinus.celenganku.utils.Hash.sha256
@@ -23,18 +24,13 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    private var isNoAutoLogin = false
+
 
     private var account: Account = Account("", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (isNoAutoLogin) {
-            val action =
-                LoginFragmentDirections.actionLoginFragmentToHomeFragment(username = "User")
-            findNavController().navigate(action)
-        }
     }
 
     override fun onCreateView(
@@ -95,8 +91,10 @@ class LoginFragment : Fragment() {
                 for (document in documents) {
                     username = document["username"].toString()
 
-                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(username=username)
-                    findNavController().navigate(action)
+                    val activity = this.requireActivity()
+                    val intent = Intent(activity, MainActivity::class.java)
+                    activity.startActivity(intent)
+                    activity.finish()
                 }
                 if (username == null) Snackbar.make(this.requireView(), "User not found", Snackbar.LENGTH_SHORT).show()
 

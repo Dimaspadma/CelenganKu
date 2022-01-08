@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.udinus.celenganku.databinding.ActivityMainBinding
 
 
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        binding.bottomNav.setupWithNavController(navController)
+
 
         Log.d(TAG, "created")
 //        setupActionBarWithNavController(navController)

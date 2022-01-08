@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_home" />
+
+    <item
+        android:id="@+id/pemasukanFragment"
+        android:title="Pemasukan"
+        android:icon="@drawable/ic_pemasukan" />
+    <item
+        android:id="@+id/pengeluaranFragment"
+        android:title="Pengeluaran"
+        android:icon="@drawable/ic_cart" />
+    <item
+        android:id="@+id/historyFragment"
+        android:title="History"
+        android:icon="@drawable/ic_history" />
+    <item
+        android:id="@+id/menuFragment"
+        android:title="Menu"
+        android:icon="@drawable/ic_menu" />
+</menu>
