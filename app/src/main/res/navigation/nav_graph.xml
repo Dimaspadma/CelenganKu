@@ -38,12 +38,24 @@
         android:id="@+id/pemasukanFragment"
         android:name="com.udinus.celenganku.ui.home.PemasukanFragment"
         android:label="fragment_pemasukan"
-        tools:layout="@layout/fragment_pemasukan" />
+        tools:layout="@layout/fragment_pemasukan">
+        <action
+            android:id="@+id/action_pemasukanFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/pengeluaranFragment"
         android:name="com.udinus.celenganku.ui.home.PengeluaranFragment"
         android:label="fragment_pengeluaran"
-        tools:layout="@layout/fragment_pengeluaran" />
+        tools:layout="@layout/fragment_pengeluaran">
+        <action
+            android:id="@+id/action_pengeluaranFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.udinus.celenganku.ui.home.HistoryFragment"

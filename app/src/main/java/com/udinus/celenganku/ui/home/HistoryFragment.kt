@@ -5,12 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.udinus.celenganku.R
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.udinus.celenganku.CelenganKuApplication
+import com.udinus.celenganku.adapter.ItemListAdapter
+import com.udinus.celenganku.databinding.FragmentHistoryBinding
+import com.udinus.celenganku.model.HistoryViewModel
+import com.udinus.celenganku.model.HistoryViewModelFactory
 
 class HistoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var _binding: FragmentHistoryBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: HistoryViewModel by activityViewModels {
+        HistoryViewModelFactory(
+            (activity?.application as CelenganKuApplication).database
+                .itemDao()
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +36,29 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false)
+        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        return _binding!!.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val adapter = ItemListAdapter {
+            val action = HistoryFragmentDirections.actionHistoryFragmentToDetailHistoryFragment()
+            this.findNavController().navigate(action)
+        }
+        binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
+        binding.recyclerView.adapter = adapter
+        viewModel.allItems.observe(this.viewLifecycleOwner) { items ->
+            items.let {
+                adapter.submitList(it)
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

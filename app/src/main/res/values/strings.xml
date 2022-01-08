@@ -5,6 +5,8 @@
 
     <string name="description_about">Celenganku merupakan sebuah aplikasi yang membantu Anda dalam mengatur keuangan Anda. Aplikasi ini membantu Anda untuk mencatat semua pemasukan dan pengeluaran harian Anda. Aplikasi ini juga akan menyimpan semua riwayat atau history yang telah Anda catat.</string>
 
+    <string name="pemasukan_success">Pemasukan berhasil ditambahkan</string>
+
     <!--    Anggota-->
     <string name="universitas">Dian Nuswantoro</string>
 
