@@ -23,11 +23,18 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
+    private var isNoAutoLogin = false
+
     private var account: Account = Account("", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (isNoAutoLogin) {
+            val action =
+                LoginFragmentDirections.actionLoginFragmentToHomeFragment(username = "User")
+            findNavController().navigate(action)
+        }
     }
 
     override fun onCreateView(

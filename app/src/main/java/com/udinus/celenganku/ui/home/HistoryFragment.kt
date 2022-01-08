@@ -1,10 +1,10 @@
-package com.udinus.celenganku.adapter
+package com.udinus.celenganku.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.udinus.celenganku.R
 
 class HistoryFragment : Fragment() {
