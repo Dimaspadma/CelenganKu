@@ -2,6 +2,7 @@ package com.udinus.celenganku.ui.form
 
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,12 +66,22 @@ class RegisterFragment : Fragment() {
         if (email.isEmpty()) {
             binding.inputEmail.error = "Email cannot empty"
             return false
+        } else {
+            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.inputEmail.error = "Email not valid"
+                return false
+            }
         }
 
         if (password.isEmpty()) {
             Log.d(TAG, "Password cannot empty")
             binding.inputPassword.error = "Password cannot empty"
             return false
+        } else {
+            if (password.length < 5) {
+                binding.inputConfirmPassword.error = "Password minimal 5 character"
+                return false
+            }
         }
 
         account = Account(email, sha256(password))

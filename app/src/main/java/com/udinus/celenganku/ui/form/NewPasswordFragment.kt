@@ -39,17 +39,23 @@ class NewPasswordFragment : Fragment() {
 
         binding.buttonSubmit.setOnClickListener {
 
-            val database = Firebase.firestore
+            if (verification()) {
 
-            // Add a new document with a generated ID
-            database.collection("accounts").document(id)
-                .update("password", sha256(binding.inputPassword.text.toString()))
-                .addOnSuccessListener { documentReference ->
-                    Log.d("setCash", "DocumentSnapshot added with ID: ${documentReference}")
-                }
+                val database = Firebase.firestore
 
-            val action = NewPasswordFragmentDirections.actionNewPasswordFragmentToLoginFragment()
-            view.findNavController().navigate(action)
+                // Add a new document with a generated ID
+                database.collection("accounts").document(id)
+                    .update("password", sha256(binding.inputPassword.text.toString()))
+                    .addOnSuccessListener { documentReference ->
+                        Log.d("setCash", "DocumentSnapshot added with ID: ${documentReference}")
+                    }
+
+                val action =
+                    NewPasswordFragmentDirections.actionNewPasswordFragmentToLoginFragment()
+                view.findNavController().navigate(action)
+
+            }
+
         }
 
     }
@@ -57,6 +63,29 @@ class NewPasswordFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun verification(): Boolean {
+        val password = binding.inputPassword.text.toString()
+        val confirmPassword = binding.inputConfirmPassword.text.toString()
+
+        if (password.isEmpty()) {
+            binding.inputPassword.error = "Email cannot empty"
+            return false
+        }
+
+        if (password != confirmPassword) {
+            binding.inputConfirmPassword.error = "Password is not match"
+            return false
+        }
+
+        if (password.length < 5) {
+            binding.inputConfirmPassword.error = "Password minimal 5 character"
+            return false
+        }
+
+        return true
+
     }
 
 }
