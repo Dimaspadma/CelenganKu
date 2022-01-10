@@ -7,14 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.udinus.celenganku.CelenganKuApplication
 import com.udinus.celenganku.data.Item
 import com.udinus.celenganku.databinding.FragmentPemasukanBinding
-import com.udinus.celenganku.model.AccountViewModel
 import com.udinus.celenganku.model.MainViewModel
 import com.udinus.celenganku.model.MainViewModelFactory
 
@@ -30,12 +28,12 @@ class PemasukanFragment : Fragment() {
         )
     }
 
-    private val accountViewModel: AccountViewModel by viewModels()
-
     lateinit var item: Item
+    lateinit var id: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        id = activity?.intent?.extras?.getString("id").toString()
     }
 
     override fun onCreateView(
@@ -49,10 +47,11 @@ class PemasukanFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.submit.setOnClickListener {
             addNewItem()
         }
-        Log.d("PemasukanFragment", "id: ${accountViewModel.id.value}")
+        Log.d("PemasukanFragment", "id: $id")
     }
 
     override fun onDestroy() {
@@ -76,15 +75,18 @@ class PemasukanFragment : Fragment() {
                 binding.inputDescription.text.toString()
             )
 
-            accountViewModel.addCash(binding.inputNominal.text.toString().toDouble())
-
-
             val database = Firebase.firestore
+            database.collection("accounts")
+                .document(id)
+                .get()
+                .addOnSuccessListener { document ->
 
-            database.collection("accounts").document(accountViewModel.id.value.toString())
-                .update("cash", accountViewModel.cash.value)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("setCash", "DocumentSnapshot added with ID: ${documentReference}")
+                    val cash = document["cash"].toString()
+                        .toDouble() + binding.inputNominal.text.toString().toDouble()
+
+                    database.collection("accounts")
+                        .document(id)
+                        .update("cash", cash)
                 }
 
             val action = PemasukanFragmentDirections.actionPemasukanFragmentToHistoryFragment()

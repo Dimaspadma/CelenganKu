@@ -1,20 +1,17 @@
 package com.udinus.celenganku.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.udinus.celenganku.CelenganKuApplication
 import com.udinus.celenganku.data.Item
 import com.udinus.celenganku.databinding.FragmentPengeluaranBinding
-import com.udinus.celenganku.model.AccountViewModel
 import com.udinus.celenganku.model.MainViewModel
 import com.udinus.celenganku.model.MainViewModelFactory
 
@@ -30,12 +27,12 @@ class PengeluaranFragment : Fragment() {
         )
     }
 
-    private val accountViewModel: AccountViewModel by viewModels()
-
     lateinit var item: Item
+    lateinit var id: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        id = activity?.intent?.extras?.getString("id").toString()
     }
 
     override fun onCreateView(
@@ -75,14 +72,18 @@ class PengeluaranFragment : Fragment() {
                 binding.inputDescription.text.toString()
             )
 
-            accountViewModel.subtractCash(binding.inputNominal.text.toString().toDouble())
-
             val database = Firebase.firestore
+            database.collection("accounts")
+                .document(id)
+                .get()
+                .addOnSuccessListener { document ->
 
-            database.collection("accounts").document(accountViewModel.id.value.toString())
-                .update("cash", accountViewModel.cash.value)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("setCash", "DocumentSnapshot added with ID: ${documentReference}")
+                    val cash = document["cash"].toString()
+                        .toDouble() - binding.inputNominal.text.toString().toDouble()
+
+                    database.collection("accounts")
+                        .document(id)
+                        .update("cash", cash)
                 }
 
             val action = PengeluaranFragmentDirections.actionPengeluaranFragmentToHistoryFragment()

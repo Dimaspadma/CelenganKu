@@ -11,14 +11,12 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.udinus.celenganku.databinding.FragmentHomeBinding
 import com.udinus.celenganku.model.AccountViewModel
+import java.text.NumberFormat
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-    private var username: String = ""
-    private var cash: String = ""
 
     private val accountViewModel: AccountViewModel by viewModels()
 
@@ -47,15 +45,20 @@ class HomeFragment : Fragment() {
             .addOnSuccessListener { document ->
                 Log.d("HOme Fragment", "data ${document.data}")
 
-                username = document["username"].toString()
-                cash = document["cash"].toString()
+                val username = document["username"].toString()
+                val cash = document["cash"].toString().toDouble()
                 Log.d("Home", "${username} - ${cash}")
 
                 binding.textUsername.text = username
-                binding.cash.text = cash
-            }
 
-        Log.d("Home", "==$username - $cash")
+                binding.cash.text =
+                    NumberFormat.getCurrencyInstance()
+                        .format(cash)
+                        .replace(',', '.')
+                        .replace("$", " ")
+
+                Log.d("Home", "==$username - $cash")
+            }
         Log.d(
             "Home",
             "${accountViewModel.id.value} = ${accountViewModel.username.value} = ${accountViewModel.cash.value}"
