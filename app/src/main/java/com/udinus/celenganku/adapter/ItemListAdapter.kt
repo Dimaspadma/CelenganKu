@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.udinus.celenganku.R
 import com.udinus.celenganku.data.Item
 import com.udinus.celenganku.data.getFormattedPrice
 import com.udinus.celenganku.databinding.ListItemBinding
@@ -32,7 +33,11 @@ class ItemListAdapter(private val onItemClicked: (item: Item) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Item) {
             binding.apply {
-                itemTag.text = item.tag
+                if (item.tag == PEMASUKAN) {
+                    itemList.setBackgroundResource(R.drawable.item_background_green)
+                } else {
+                    itemList.setBackgroundResource(R.drawable.item_background_red)
+                }
                 itemTitle.text = item.title
                 itemNominal.text = item.getFormattedPrice()
             }
@@ -49,5 +54,7 @@ class ItemListAdapter(private val onItemClicked: (item: Item) -> Unit) :
                 return oldItem.id == newItem.id
             }
         }
+
+        const val PEMASUKAN = "PEMASUKAN"
     }
 }

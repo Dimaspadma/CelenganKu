@@ -100,7 +100,7 @@
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.udinus.celenganku.ui.home.MapsFragment"
+        android:name="com.udinus.celenganku.ui.credit.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
     <fragment
