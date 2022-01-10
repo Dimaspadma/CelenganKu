@@ -13,6 +13,7 @@ import com.udinus.celenganku.adapter.ItemListAdapter
 import com.udinus.celenganku.databinding.FragmentHistoryBinding
 import com.udinus.celenganku.model.MainViewModel
 import com.udinus.celenganku.model.MainViewModelFactory
+import java.text.NumberFormat
 
 class HistoryFragment : Fragment() {
 
@@ -43,8 +44,16 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = ItemListAdapter {
-            val action = HistoryFragmentDirections.actionHistoryFragmentToDetailHistoryFragment()
+        val adapter = ItemListAdapter { item ->
+            val action = HistoryFragmentDirections.actionHistoryFragmentToDetailHistoryFragment(
+                title = item.title,
+                nominal = NumberFormat.getCurrencyInstance()
+                    .format(item.nominal)
+                    .replace(',', '.')
+                    .replace("$", "Rp. "),
+                description = item.description,
+                tagItem = item.tag
+            )
             this.findNavController().navigate(action)
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)

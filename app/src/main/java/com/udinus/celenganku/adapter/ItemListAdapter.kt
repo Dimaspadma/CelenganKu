@@ -34,9 +34,9 @@ class ItemListAdapter(private val onItemClicked: (item: Item) -> Unit) :
         fun bind(item: Item) {
             binding.apply {
                 if (item.tag == PEMASUKAN) {
-                    itemList.setBackgroundResource(R.drawable.item_background_green)
+                    linearLayoutItem.setBackgroundResource(R.drawable.item_background_green)
                 } else {
-                    itemList.setBackgroundResource(R.drawable.item_background_red)
+                    linearLayoutItem.setBackgroundResource(R.drawable.item_background_red)
                 }
                 itemTitle.text = item.title
                 itemNominal.text = item.getFormattedPrice()

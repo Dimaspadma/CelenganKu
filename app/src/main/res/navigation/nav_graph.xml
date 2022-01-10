@@ -71,7 +71,20 @@
         android:id="@+id/detailHistoryFragment"
         android:name="com.udinus.celenganku.ui.home.DetailHistoryFragment"
         android:label="fragment_detail_history"
-        tools:layout="@layout/fragment_detail_history" />
+        tools:layout="@layout/fragment_detail_history">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="nominal"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="tag_item"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.udinus.celenganku.ui.home.MenuFragment"
