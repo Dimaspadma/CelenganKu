@@ -5,7 +5,7 @@ import com.udinus.celenganku.data.Item
 import com.udinus.celenganku.data.ItemDao
 import kotlinx.coroutines.launch
 
-class HistoryViewModel(private val itemDao: ItemDao) : ViewModel() {
+class MainViewModel(private val itemDao: ItemDao) : ViewModel() {
 
     val allItems: LiveData<List<Item>> = itemDao.getItems().asLiveData()
 
@@ -32,6 +32,7 @@ class HistoryViewModel(private val itemDao: ItemDao) : ViewModel() {
     fun addNewItemPemasukan(itemTitle: String, itemNominal: String, itemDescription: String) {
         val newItem = getNewItemEntry("PEMASUKAN", itemTitle, itemNominal, itemDescription)
         insertItem(newItem)
+
     }
 
     fun addNewItemPengeluaran(itemTitle: String, itemNominal: String, itemDescription: String) {
@@ -48,11 +49,11 @@ class HistoryViewModel(private val itemDao: ItemDao) : ViewModel() {
 
 }
 
-class HistoryViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
+class MainViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HistoryViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return HistoryViewModel(itemDao) as T
+            return MainViewModel(itemDao) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

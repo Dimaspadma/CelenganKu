@@ -53,5 +53,11 @@
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="username"
+            app:argType="string" />
     </fragment>
 </navigation>

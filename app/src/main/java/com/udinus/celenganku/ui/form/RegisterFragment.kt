@@ -11,7 +11,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.udinus.celenganku.databinding.FragmentRegisterBinding
 import com.udinus.celenganku.model.Account
-import com.udinus.celenganku.utils.Hash
 import com.udinus.celenganku.utils.Hash.sha256
 
 class RegisterFragment : Fragment() {
@@ -78,7 +77,8 @@ class RegisterFragment : Fragment() {
 
         val user = hashMapOf(
             "username" to account.username,
-            "password" to Hash.sha256(account.password)
+            "password" to account.password,
+            "cash" to 0.0
         )
 
         // Add a new document with a generated ID

@@ -5,22 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udinus.celenganku.CelenganKuApplication
 import com.udinus.celenganku.adapter.ItemListAdapter
 import com.udinus.celenganku.databinding.FragmentHistoryBinding
-import com.udinus.celenganku.model.HistoryViewModel
-import com.udinus.celenganku.model.HistoryViewModelFactory
+import com.udinus.celenganku.model.MainViewModel
+import com.udinus.celenganku.model.MainViewModelFactory
 
 class HistoryFragment : Fragment() {
 
     private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: HistoryViewModel by activityViewModels {
-        HistoryViewModelFactory(
+    private val viewModel: MainViewModel by viewModels {
+        MainViewModelFactory(
             (activity?.application as CelenganKuApplication).database
                 .itemDao()
         )

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
@@ -14,6 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.udinus.celenganku.MainActivity
 import com.udinus.celenganku.databinding.FragmentLoginBinding
 import com.udinus.celenganku.model.Account
+import com.udinus.celenganku.model.AccountViewModel
 import com.udinus.celenganku.utils.Hash.sha256
 
 class LoginFragment : Fragment() {
@@ -24,14 +26,9 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-
+    private val accountViewModel: AccountViewModel by activityViewModels()
 
     private var account: Account = Account("", "")
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,7 +79,7 @@ class LoginFragment : Fragment() {
 
         database.collection("accounts")
             .whereEqualTo("username", account.username)
-            .whereEqualTo("password", sha256(account.password))
+            .whereEqualTo("password", account.password)
             .get()
             .addOnSuccessListener { documents ->
 
@@ -90,9 +87,14 @@ class LoginFragment : Fragment() {
 
                 for (document in documents) {
                     username = document["username"].toString()
+                    val id = document.id
+                    val cash = document["cash"].toString()
 
                     val activity = this.requireActivity()
                     val intent = Intent(activity, MainActivity::class.java)
+                    intent.putExtra("id", id)
+                    intent.putExtra("username", username)
+                    intent.putExtra("cash", cash)
                     activity.startActivity(intent)
                     activity.finish()
                 }

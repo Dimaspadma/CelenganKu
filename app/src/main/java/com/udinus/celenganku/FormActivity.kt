@@ -8,7 +8,7 @@ import com.udinus.celenganku.databinding.ActivityFormBinding
 class FormActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFormBinding
-    private var isNoAutoLogin = true
+    private var isNoAutoLogin = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

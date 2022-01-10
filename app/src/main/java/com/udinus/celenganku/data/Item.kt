@@ -25,4 +25,7 @@ class Item(
 )
 
 fun Item.getFormattedPrice(): String =
-    NumberFormat.getCurrencyInstance().format(nominal).replace(',', '.')
+    NumberFormat.getCurrencyInstance()
+        .format(nominal)
+        .replace(',', '.')
+        .replace("$", "Rp. ")
