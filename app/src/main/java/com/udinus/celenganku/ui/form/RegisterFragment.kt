@@ -58,11 +58,18 @@ class RegisterFragment : Fragment() {
 
         if (password != confirmPassword) {
             Log.d(TAG, "Password is not match")
+            binding.inputConfirmPassword.error = "Password is not match"
+            return false
+        }
+
+        if (email.isEmpty()) {
+            binding.inputEmail.error = "Email cannot empty"
             return false
         }
 
         if (password.isEmpty()) {
             Log.d(TAG, "Password cannot empty")
+            binding.inputPassword.error = "Password cannot empty"
             return false
         }
 

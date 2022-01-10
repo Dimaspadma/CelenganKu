@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
             .addOnSuccessListener { document ->
                 Log.d("HOme Fragment", "data ${document.data}")
 
-                val username = document["username"].toString()
+                val username = document["username"].toString().split('@')[0]
                 val cash = document["cash"].toString().toDouble()
                 Log.d("Home", "${username} - ${cash}")
 
